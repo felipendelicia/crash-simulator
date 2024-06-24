@@ -1,0 +1,146 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://root.gd" type="Script" id=1]
+[ext_resource path="res://circle1.gd" type="Script" id=2]
+[ext_resource path="res://uba.png" type="Texture" id=3]
+[ext_resource path="res://circle2.gd" type="Script" id=4]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 49.4038
+
+[node name="root" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="circle1" type="Area2D" parent="."]
+position = Vector2( 231.623, 286.395 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="circle1"]
+scale = Vector2( 0.177857, 0.177857 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="circle1"]
+shape = SubResource( 1 )
+
+[node name="circle2" type="Area2D" parent="."]
+position = Vector2( 780, 286.395 )
+script = ExtResource( 4 )
+
+[node name="Sprite" type="Sprite" parent="circle2"]
+scale = Vector2( 0.177857, 0.177857 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="circle2"]
+shape = SubResource( 1 )
+
+[node name="UI" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="inputs1" type="HBoxContainer" parent="UI/VBoxContainer"]
+margin_right = 471.0
+margin_bottom = 24.0
+
+[node name="mass1" type="Label" parent="UI/VBoxContainer/inputs1"]
+margin_top = 5.0
+margin_right = 135.0
+margin_bottom = 19.0
+text = "Mass 1 in kilograms: "
+
+[node name="input_mass1" type="LineEdit" parent="UI/VBoxContainer/inputs1"]
+margin_left = 139.0
+margin_right = 197.0
+margin_bottom = 24.0
+text = "20"
+
+[node name="velocity1" type="Label" parent="UI/VBoxContainer/inputs1"]
+margin_left = 201.0
+margin_top = 5.0
+margin_right = 409.0
+margin_bottom = 19.0
+text = "Velocity 1 in meters per second:"
+
+[node name="input_velocity1" type="LineEdit" parent="UI/VBoxContainer/inputs1"]
+margin_left = 413.0
+margin_right = 471.0
+margin_bottom = 24.0
+text = "30"
+
+[node name="inputs2" type="HBoxContainer" parent="UI/VBoxContainer"]
+margin_top = 28.0
+margin_right = 471.0
+margin_bottom = 52.0
+
+[node name="mass2" type="Label" parent="UI/VBoxContainer/inputs2"]
+margin_top = 5.0
+margin_right = 135.0
+margin_bottom = 19.0
+text = "Mass 2 in kilograms: "
+
+[node name="input_mass2" type="LineEdit" parent="UI/VBoxContainer/inputs2"]
+margin_left = 139.0
+margin_right = 197.0
+margin_bottom = 24.0
+text = "20"
+
+[node name="velocity2" type="Label" parent="UI/VBoxContainer/inputs2"]
+margin_left = 201.0
+margin_top = 5.0
+margin_right = 409.0
+margin_bottom = 19.0
+text = "Velocity 2 in meters per second:"
+
+[node name="input_velocity2" type="LineEdit" parent="UI/VBoxContainer/inputs2"]
+margin_left = 413.0
+margin_right = 471.0
+margin_bottom = 24.0
+text = "30"
+
+[node name="friction" type="HBoxContainer" parent="UI/VBoxContainer"]
+margin_top = 56.0
+margin_right = 471.0
+margin_bottom = 80.0
+
+[node name="label" type="Label" parent="UI/VBoxContainer/friction"]
+margin_top = 5.0
+margin_right = 52.0
+margin_bottom = 19.0
+text = "Friction:"
+
+[node name="input" type="LineEdit" parent="UI/VBoxContainer/friction"]
+margin_left = 56.0
+margin_right = 114.0
+margin_bottom = 24.0
+text = "20"
+
+[node name="buttons" type="HBoxContainer" parent="UI/VBoxContainer"]
+margin_top = 84.0
+margin_right = 471.0
+margin_bottom = 104.0
+
+[node name="play" type="Button" parent="UI/VBoxContainer/buttons"]
+margin_right = 38.0
+margin_bottom = 20.0
+text = "Play"
+
+[node name="stop" type="Button" parent="UI/VBoxContainer/buttons"]
+margin_left = 42.0
+margin_right = 82.0
+margin_bottom = 20.0
+text = "Stop"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/VBoxContainer"]
+margin_top = 108.0
+margin_right = 471.0
+margin_bottom = 122.0
+
+[node name="text" type="Label" parent="UI/VBoxContainer/HBoxContainer"]
+margin_top = 10.0
+margin_right = 250.0
+margin_bottom = 14.0
+text = "Viva ciencias de la computacion carajo!"
+
